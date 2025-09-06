@@ -39,6 +39,4 @@ You can add screenshots or diagrams here. Use Markdown image syntax:
 
 For example:
 
-```markdown
 ![StormM32 LED](images/IMG_9734.png)
-```
