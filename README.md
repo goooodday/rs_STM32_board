@@ -40,5 +40,5 @@ You can add screenshots or diagrams here. Use Markdown image syntax:
 For example:
 
 ```markdown
-![LED Blinking on StormM32](images/led_blinking.png)
+![StormM32 LED](images/IMG_9734.png)
 ```
