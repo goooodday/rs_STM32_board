@@ -1,0 +1,26 @@
+[default.general]
+chip = "STM32F103RCTx"  # StorM32 BCG v1.32에 사용되는 일반적인 MCU
+
+[default.flashing]
+enabled = true
+halt_afterwards = false
+restore_unwritten_bytes = false
+
+[default.reset]
+enabled = true
+halt_afterwards = false
+
+[default.probe]
+protocol = "Swd"
+speed = 480
+
+[default.rtt]
+enabled = false  # LED 테스트에서는 RTT 불필요
+
+[default.gdb]
+enabled = false  # 기본적으로 GDB 비활성화
+
+# STM32F103RC 사양:
+# - 256KB Flash
+# - 48KB SRAM
+# - 64핀 LQFP 패키지

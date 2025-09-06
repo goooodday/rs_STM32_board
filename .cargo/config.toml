@@ -1,0 +1,9 @@
+[target.thumbv7m-none-eabi]
+# 링커 설정 (defmt 제거)
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]
+
+[build]
+# 기본 타겟을 ARM Cortex-M으로 설정
+target = "thumbv7m-none-eabi"

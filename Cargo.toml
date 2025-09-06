@@ -1,0 +1,24 @@
+[package]
+name = "storm32-led-blink"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+embedded-hal = "0.2"
+nb = "1.0"
+panic-halt = "0.2"
+
+# STM32F103RC 기반 (StorM32 BCG v1.32)
+stm32f1xx-hal = { version = "0.10", features = ["stm32f103", "rt", "medium"] }
+
+[profile.release]
+debug = true
+lto = true
+
+[profile.dev]
+debug = true
+opt-level = "s"
+
+# 기본 main.rs를 사용하므로 [[bin]] 섹션 제거
