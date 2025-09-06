@@ -7,4 +7,7 @@ MEMORY
 
   /* SRAM: 48KB (STM32F103RC) */
   RAM : ORIGIN = 0x20000000, LENGTH = 48K
+
+  /* USB RAM: 1KB (for USB buffers) */
+  USB_RAM : ORIGIN = 0x20000000 + 48K - 1K, LENGTH = 1K
 }

@@ -17,15 +17,10 @@ fn main() -> ! {
     let clocks = rcc.cfgr.freeze(&mut flash.acr);
 
     // GPIO 초기화
-    let mut gpioc = dp.GPIOC.split();
+    let mut gpiob = dp.GPIOB.split(); // Added for LED pins
 
-    // PC13을 출력으로 설정 (많은 STM32F103 보드에서 내장 LED가 PC13에 연결됨)
-    // StorM32 보드의 실제 LED 핀에 맞게 수정이 필요할 수 있습니다
-    let mut led = gpioc.pc12.into_push_pull_output(&mut gpioc.crh);
-
-    // 또는 다른 핀들을 시도해볼 수 있습니다:
-    // let mut led = gpioc.pc14.into_push_pull_output(&mut gpioc.crh);
-    // let mut led = gpioc.pc15.into_push_pull_output(&mut gpioc.crh);
+    // LED 핀 (PB12)을 출력으로 설정
+    let mut led = gpiob.pb12.into_push_pull_output(&mut gpiob.crh);
 
     // 타이머 초기화 (1Hz = 1초마다 토글)
     let mut timer = Timer::syst(cp.SYST, &clocks).counter_hz();
